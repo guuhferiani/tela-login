@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-    background: #fff;
+    background:  #e6e6e6;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
@@ -144,6 +144,17 @@ permite Criar pontos especificos no tempo da animação
     margin: 0 3px;
     width: 40px;
     height: 40px;
+}
+
+.social-icons .google:hover {
+    color: red;
+}
+
+.social-icons .face:hover {
+    color: blue;
+    background: red;
+    transition: 0.2s ease-in-out;
+    transform: scale(1.2);
 }
 
 .toggle-container {
