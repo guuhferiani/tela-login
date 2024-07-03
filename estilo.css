@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 body {
     background: #c9d6ff;
     background: linear-gradient(to right, #e2e2e2, #c9d6ff);
@@ -12,6 +13,7 @@ body {
     flex-direction: column;
     height: 100vh;
 }
+
 .container {
     background: #fff;
     border-radius: 30px;
@@ -22,21 +24,25 @@ body {
     max-width: 100%;
     min-height: 480px;
 }
+
 .container p {
     font-size: 16px;
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
 }
+
 .container span {
     font-size: 12px;
 }
+
 .container a {
     color: #333;
     font-size: 13px;
     text-decoration: none;
     margin: 15px 0 10px;
 }
+
 .container button {
     background: #512da8;
     color: #fff;
@@ -50,7 +56,8 @@ body {
     margin-top: 10px;
     cursor: pointer;
 }
-.container button.hidden{
+
+.container button.hidden {
     background: transparent;
     border-color: #fff;
 }
@@ -87,4 +94,74 @@ body {
     left: 0;
     width: 50%;
     z-index: 2;
+}
+
+.container.active .sign-in {
+    transform: translateX(100%);
+    /*mover o elemento na horizontal*/
+}
+
+.sign-up {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+/* permite criar animações.
+permite Criar pontos especificos no tempo da animação
+*/
+@keyframes move {
+    0%,
+    49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%,
+    100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    width: 40px;
+    height: 40px;
+}
+
+.toggle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+.container.active .toggle-container {
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+    
 }
